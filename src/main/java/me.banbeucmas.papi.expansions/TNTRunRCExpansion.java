@@ -19,18 +19,13 @@ public class TNTRunRCExpansion extends PlaceholderExpansion {
 
     @Override
     public boolean register() {
-
-        if (!canRegister()) {
-            return false;
-        }
-
         plugin = (TNTRun) Bukkit.getPluginManager().getPlugin(getPlugin());
 
         if (plugin == null) {
             return false;
         }
 
-        return PlaceholderAPI.registerPlaceholderHook(getIdentifier(), this);
+        return super.register();
     }
 
     @Override
