@@ -24,22 +24,12 @@ public class TNTRunRCExpansion extends PlaceholderExpansion {
             return false;
         }
 
-        /*
-         * "SomePlugin" does not have static methods to access its api so we must
-         * create set a variable to obtain access to it
-         */
         plugin = (TNTRun) Bukkit.getPluginManager().getPlugin(getPlugin());
 
-        /*
-         * if for some reason we can not get our variable, we should return false
-         */
         if (plugin == null) {
             return false;
         }
-        /*
-         * Since we override the register method, we need to manually
-         * register this hook
-         */
+
         return PlaceholderAPI.registerPlaceholderHook(getIdentifier(), this);
     }
 
